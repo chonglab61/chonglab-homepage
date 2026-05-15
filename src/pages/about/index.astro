@@ -1,20 +1,30 @@
 ---
 import Layout from '../../components/Layout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
+import { introduction } from '../../data/site';
 import '../../styles/global.css';
 ---
 
 <Layout title="About | Chong Lab" description="Introduction to Chong Lab at JAIST.">
   <section class="page-intro">
     <SectionHeading
-      eyebrow="About"
-      title="A robotics laboratory focused on intelligent systems, human interaction, and autonomous behavior"
-      summary="This page modernizes the original introduction content into a concise static overview."
+      eyebrow="Introduction"
+      title="JAIST Robotics Laboratory"
+      summary={introduction.summary}
     />
     <div class="list-grid">
-      <div class="list-item">Directed by Prof. Nak Young Chong in the School of Information Science at JAIST.</div>
-      <div class="list-item">Research spans manipulation, medical robotics, swarm systems, aerial robots, and learning-based control.</div>
-      <div class="list-item">Legacy details remain available through the original JAIST pages for archival depth.</div>
+      <div class="list-item">
+        <strong>Director</strong>
+        <p>{introduction.director.name}</p>
+        <p>{introduction.director.role}</p>
+        <p>{introduction.director.contact}</p>
+        <p>{introduction.director.office}</p>
+        <p>TEL {introduction.director.phone}, FAX {introduction.director.fax}</p>
+        <p>Email {introduction.director.email}</p>
+      </div>
+      {introduction.service.map((item) => (
+        <div class="list-item">{item}</div>
+      ))}
     </div>
   </section>
 </Layout>

@@ -66,6 +66,40 @@ Before shipping any change:
 5. Push to GitHub.
 6. Connect or redeploy Cloudflare Pages from the GitHub branch.
 
+## GitHub Workflow Notes
+
+- Public repository: `https://github.com/chonglab61/chonglab-homepage`
+- Default branch: `main`
+- Publishing model: push to `main`, let Cloudflare Pages build from GitHub.
+- Deployment target: Cloudflare Pages, static output only.
+- Do not store GitHub tokens, PATs, or repository secrets in this repo.
+- If credentials are ever needed for local automation, prefer ephemeral environment variables or secret managers outside the repo.
+- If the repository name or remote changes in the future, update this section immediately so the file remains the auto-read source of truth.
+
+## Project Standards Review
+
+Current status:
+
+- `DESIGN.md` exists and defines the visual system in a structured form.
+- `README.md` exists and explains local setup, Docker build, and deployment.
+- `astro.config.mjs` is minimal and appropriate for a static site.
+- `package.json` is intentionally small, but there is no lint/test script yet.
+- `CHANGELOG.md` is referenced but has not been created yet.
+- The build is currently verified through Docker, which is good for reproducibility.
+
+Gaps to address later:
+
+1. Add a real `CHANGELOG.md` when the first user-facing release is finalized.
+2. Add linting once the project needs stricter code-style enforcement.
+3. Add content checks or link checks if the site grows beyond the current small static footprint.
+4. Keep the design and content model in sync when adding new pages.
+
+Standards conclusion:
+
+- The repository is currently lightweight and reasonably规范 for a small static Astro site.
+- The most important missing piece is a changelog file matching the maintenance policy already described here.
+- No structural or deployment blockers were found during the last review.
+
 ## Repository Hygiene
 
 - Keep `.sisyphus/`, `node_modules/`, and build outputs out of Git.

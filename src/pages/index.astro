@@ -1,8 +1,7 @@
 ---
 import Layout from '../components/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import ResearchCard from '../components/ResearchCard.astro';
-import { hero, highlights, featuredResearch } from '../data/site';
+import { hero, highlights, introduction } from '../data/site';
 import '../styles/global.css';
 ---
 
@@ -32,27 +31,50 @@ import '../styles/global.css';
   </section>
 
   <section class="section">
-    <SectionHeading
-      eyebrow="Selected research"
-      title="A curated set of lab projects, presented as quiet editorial cards"
-      summary="Each card summarizes the work and points back to the original JAIST detail page."
-    />
-    <div class="grid grid--cards">
-      {featuredResearch.map((item) => <ResearchCard item={item} />)}
+    <SectionHeading eyebrow="Research Areas" title="Find more research area here" summary="CV Area, Emotion Detection, Caresses, and related projects." />
+    <div class="chips">
+      <span class="chip">Robot-Assisted Ultrasound Imaging</span>
+      <span class="chip">Nonprehensile Manipulation</span>
+      <span class="chip">Swarm Robotics</span>
+      <span class="chip">RFID</span>
+      <span class="chip">JARoW</span>
+      <span class="chip">Humanoid Robotics</span>
+      <span class="chip">UAV</span>
+      <span class="chip">Incremental Learning</span>
     </div>
   </section>
 
   <section class="section">
     <SectionHeading
-      eyebrow="Site policy"
-      title="New pages here, original depth there"
-      summary="The refactor should not duplicate the entire legacy site. The new site is the front door, not the archive."
+      eyebrow="Introduction"
+      title="Robotics Laboratory"
+      summary={introduction.summary}
     />
-    <div class="chips">
-      <span class="chip">Original project pages stay canonical</span>
-      <span class="chip">Restricted lecture stays hidden or labeled</span>
-      <span class="chip">Datasets remain linked, not mirrored</span>
-      <span class="chip">GitHub to Cloudflare Pages build pipeline</span>
+    <div class="page-essay">
+      <div class="list-grid">
+        <div class="list-item">
+          <strong>Director</strong>
+          <p>{introduction.director.name}</p>
+          <p>{introduction.director.role}</p>
+          <p>{introduction.director.contact}</p>
+          <p>{introduction.director.office}</p>
+          <p>TEL {introduction.director.phone}, FAX {introduction.director.fax}</p>
+          <p>Email {introduction.director.email}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading
+      eyebrow="Professional Service"
+      title="Academic service and visiting appointments"
+      summary="A concise version of the service history from the original lab introduction."
+    />
+    <div class="list-grid">
+      {introduction.service.map((item) => (
+        <div class="list-item">{item}</div>
+      ))}
     </div>
   </section>
 </Layout>

@@ -2,33 +2,55 @@ export const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
   { label: 'Research', href: '/research/' },
-  { label: 'People', href: '/people/' },
   { label: 'Datasets', href: '/datasets/' }
 ];
 
 export const hero = {
-  eyebrow: 'JAIST Chong Lab',
-  title: 'A calm static home for the lab, with the original site preserved behind it.',
+  eyebrow: 'Welcome to Chong Lab',
+  title: 'Intelligent Robotic Laboratory of JAIST',
   description:
-    'This site is a lightweight Cloudflare-ready front door. It summarizes the lab, surfaces key research, and sends readers to the original JAIST pages for the full legacy content.',
-  primaryCta: { label: 'Explore Research', href: '/research/' },
+    'This static site presents the lab in a simpler, cleaner format while keeping the original JAIST project pages available for detailed reading.',
+  primaryCta: { label: 'Research Areas', href: '/research/' },
   secondaryCta: { label: 'Open Original Site', href: 'https://www.jaist.ac.jp/robot/' }
 };
 
 export const highlights = [
   {
-    label: 'Static by default',
-    value: 'Astro pages generated to plain HTML'
+    label: 'Robotic Area',
+    value: 'Start your research with robots'
   },
   {
-    label: 'Deployment',
-    value: 'GitHub to Cloudflare Pages'
+    label: 'CV Area',
+    value: 'Vision, emotion detection, and Caresses'
   },
   {
-    label: 'Content policy',
-    value: 'New summaries, original detail links'
+    label: 'Lab format',
+    value: 'Modern static front door, original detail pages preserved'
   }
 ];
+
+export const introduction = {
+  summary:
+    'The JAIST Robotics Laboratory, directed by Prof. Nak Young Chong, is affiliated with the School of Information Science at JAIST. The lab, also known as the Intelligent Mechanical Systems Laboratory, is devoted to the research and development of novel intelligent robotic systems through knowledge networking and interactive communication.',
+  director: {
+    name: 'NakYoung Chong, Ph.D.',
+    role: 'Professor, School of Information Science, Japan Advanced Institute of Science and Technology',
+    contact: '1-1 Asahidai, Nomi, Ishikawa 923-1292 Japan',
+    email: 'nakyoung@jaist.ac.jp',
+    office: 'Office I-61, 6F IS Building 1',
+    phone: '+81-761-51-1248',
+    fax: '+81-761-51-1149'
+  },
+  service: [
+    'Visiting Scholar, Robotics Institute, Carnegie Mellon University, U.S.A., 2015-2018',
+    'International Scholar, Kyung Hee University, Korea, 2013-2014',
+    'Associate Graduate Faculty, University of Nevada, U.S.A., 2011-2016',
+    'Visiting Scholar, University of Genoa, Italy, 2010',
+    'Visiting Scholar, Georgia Institute of Technology, U.S.A., 2008-2009',
+    'Adjunct Senior Researcher, National Institute of Advanced Industrial Science and Technology, Tsukuba, Japan, 2003-2007',
+    'Visiting Scholar, Northwestern University, U.S.A., 2001-2002'
+  ]
+};
 
 export const featuredResearch = [
   {
