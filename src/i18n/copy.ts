@@ -103,6 +103,10 @@ export const copy = {
         directorLabel: 'Director',
         profileLabel: 'Full Profile on JAIST →'
       },
+      directorName: 'Nak Young Chong, Ph.D.',
+      directorProfile: 'Professor, School of Information Science, JAIST',
+      directorAddress: '1-1 Asahidai, Nomi, Ishikawa 923-1292, Japan',
+      directorOffice: 'Office I-61, 6F IS Building 1',
       serviceHistorySection: {
         eyebrow: 'Professional Service',
         title: 'Academic service and visiting appointments',
@@ -178,7 +182,8 @@ export const copy = {
       metaDescription: 'Introduction to Chong Lab at JAIST.',
       intro: {
         eyebrow: 'Introduction',
-        title: 'JAIST Robotics Laboratory'
+        title: 'JAIST Robotics Laboratory',
+        summary: 'The JAIST Robotics Laboratory, directed by Prof. Nak Young Chong, is affiliated with the School of Information Science at JAIST. The lab is devoted to the research and development of intelligent robotic systems through knowledge networking and interactive communication.'
       },
       director: {
         label: 'Director',
@@ -296,6 +301,10 @@ export const copy = {
         directorLabel: '研究代表',
         profileLabel: 'JAIST の詳細プロフィール →'
       },
+      directorName: 'Nak Young Chong, Ph.D.',
+      directorProfile: '情報科学系 教授, JAIST',
+      directorAddress: '〒923-1292 石川県能美市旭台1-1',
+      directorOffice: '研究室 6F IS Building 1, I-61',
       serviceHistorySection: {
         eyebrow: '学会・役職',
         title: '学術サービスと客員歴',
@@ -340,7 +349,7 @@ export const copy = {
     about: {
       metaTitle: '研究室紹介 | チョン研究室',
       metaDescription: 'JAIST チョン研究室の紹介。',
-      intro: { eyebrow: '紹介', title: 'JAIST ロボティクス研究室' },
+      intro: { eyebrow: '紹介', title: 'JAIST ロボティクス研究室', summary: 'JAIST チョン研究室は、知識ネットワークと対話的コミュニケーションを通じて知能ロボットシステムの研究開発を進めています。' },
       director: { label: '研究代表', profileLabel: 'JAIST の詳細プロフィール →' }
     },
     people: {

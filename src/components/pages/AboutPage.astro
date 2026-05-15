@@ -1,0 +1,27 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { getCopy } from '../../i18n/copy';
+
+const { locale = 'en' } = Astro.props;
+const copy = getCopy(locale);
+const pageCopy = copy.about;
+---
+
+<section class="page-intro">
+  <SectionHeading eyebrow={pageCopy.intro.eyebrow} title={pageCopy.intro.title} summary={pageCopy.intro.summary} />
+  <div class="list-grid">
+    <div class="list-item">
+      <strong>{pageCopy.director.label}</strong>
+      <p>{pageCopy.directorName}</p>
+      <p>{pageCopy.directorProfile}</p>
+      <p>{pageCopy.directorAddress}</p>
+      <p>{pageCopy.directorOffice}</p>
+      <p>TEL +81-761-51-1248, FAX +81-761-51-1149</p>
+      <p>Email nakyoung@jaist.ac.jp</p>
+      <a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.director.profileLabel}</a>
+    </div>
+    {copy.en.home.serviceHistory.map((item) => (
+      <div class="list-item">{item}</div>
+    ))}
+  </div>
+</section>

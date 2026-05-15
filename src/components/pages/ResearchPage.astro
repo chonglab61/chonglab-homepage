@@ -1,0 +1,45 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import ResearchCard from '../ResearchCard.astro';
+import { getCopy } from '../../i18n/copy';
+
+const { locale = 'en' } = Astro.props;
+const copy = getCopy(locale);
+const pageCopy = copy.research;
+const urls = [
+  'https://www.jaist.ac.jp/robot/research/sg4hri/sg4hri.php',
+  'https://www.jaist.ac.jp/robot/research/ultrasound/ultrasound.php',
+  'https://www.jaist.ac.jp/robot/research/TEPP/TEPP.php',
+  'https://www.jaist.ac.jp/robot/research/swarmrobot/swarmrobot.php'
+];
+---
+
+<>
+  <section class="page-intro">
+    <SectionHeading eyebrow={pageCopy.intro.eyebrow} title={pageCopy.intro.title} summary={pageCopy.intro.summary} />
+  </section>
+
+  <section class="section">
+    <div class="grid grid--cards">
+      {pageCopy.featuredResearch.map((item, index) => <ResearchCard item={{ ...item, href: urls[index] }} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow={pageCopy.themes.eyebrow} title={pageCopy.themes.title} />
+    <div class="grid grid--cards">
+      {pageCopy.themesList.map((group) => (
+        <article class="card">
+          <div class="card__body">
+            <p class="card__kicker">Theme</p>
+            <h3>{group.title}</h3>
+            <div class="list-grid">
+              {group.items.map((item) => <div class="list-item">{item}</div>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="section__cta"><a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.themes.cta}</a></p>
+  </section>
+</>

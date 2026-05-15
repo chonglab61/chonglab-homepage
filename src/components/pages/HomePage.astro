@@ -1,0 +1,102 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { getCopy } from '../../i18n/copy';
+import { localizedPath } from '../../lib/i18n';
+
+const { locale = 'en' } = Astro.props;
+const copy = getCopy(locale);
+const pageCopy = copy.home;
+const ui = copy.ui;
+---
+
+<>
+  <section class="hero" id="main">
+    <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero__content">
+      <p class="hero__eyebrow">{pageCopy.hero.eyebrow}</p>
+      <h1>{pageCopy.hero.title}</h1>
+      <p>{pageCopy.hero.description}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href={localizedPath(locale, '/research/')}>{pageCopy.hero.primaryCta}</a>
+        <a class="button" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.hero.secondaryCta}</a>
+      </div>
+    </div>
+    <a class="hero__chevron" href="#research-areas" aria-label={ui.scrollToNext}>↓</a>
+  </section>
+
+  <section class="section" id="research-areas">
+    <SectionHeading eyebrow={pageCopy.researchSection.eyebrow} title={pageCopy.researchSection.title} summary={pageCopy.researchSection.summary} />
+    <div class="grid grid--cards">
+      {pageCopy.researchAreas.map((area, index) => (
+        <article class="card">
+          <div class="card__body">
+            <p class="card__kicker">{ui.themeCardLabel}</p>
+            <h3>{area.title}</h3>
+            <p>{area.description}</p>
+            {index === 2 ? (
+              <a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{area.action}</a>
+            ) : (
+              <a class="card__link" href={localizedPath(locale, '/research/')}>{area.action}</a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow={pageCopy.serviceSection.eyebrow} title={pageCopy.serviceSection.title} summary={pageCopy.serviceSection.summary} />
+    <div class="grid grid--services">
+      {pageCopy.serviceTiles.map((tile, index) => {
+        const urls = [
+          'https://www.jaist.ac.jp/robot/',
+          'https://www.jaist.ac.jp/robot/research/',
+          'https://www.jaist.ac.jp/robot/',
+          localizedPath(locale, '/datasets/'),
+          'https://github.com/chonglab61',
+          'mailto:robot@ml.jaist.ac.jp'
+        ];
+        const external = index === 0 || index === 1 || index === 2 || index === 4;
+
+        return (
+          <article class="card card--service">
+            <div class="card__body">
+              <p class="card__kicker">{['globe', 'flask', 'lock', 'database', 'brand-github', 'mail'][index]}</p>
+              <h3>{tile.label}</h3>
+              <p>{tile.description}</p>
+              {tile.locked ? <p class="card__badge">{ui.requiresAccount}</p> : null}
+              <a class="card__link" href={urls[index]} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{tile.action}</a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow={pageCopy.introductionSection.eyebrow} title={pageCopy.introductionSection.title} summary={pageCopy.introductionSection.summary} />
+    <div class="intro-grid">
+      <div class="intro-grid__media">
+        <img src="/assets/img/prof-chong.svg" alt="Prof. Nak Young Chong" width="400" height="400" loading="lazy" />
+      </div>
+      <div class="intro-grid__body">
+        <p class="card__kicker">{pageCopy.introductionSection.directorLabel}</p>
+        <h3>{pageCopy.directorName}</h3>
+        <p>{pageCopy.directorProfile}</p>
+        <p>{pageCopy.directorAddress}</p>
+        <p>{pageCopy.directorOffice}</p>
+        <p>TEL +81-761-51-1248, FAX +81-761-51-1149</p>
+        <p>Email nakyoung@jaist.ac.jp</p>
+        <a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.introductionSection.profileLabel}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow={pageCopy.serviceHistorySection.eyebrow} title={pageCopy.serviceHistorySection.title} summary={pageCopy.serviceHistorySection.summary} />
+    <div class="list-grid">
+      {pageCopy.serviceHistory.map((item) => <div class="list-item">{item}</div>)}
+    </div>
+    <p class="section__cta"><a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.serviceHistorySection.cta}</a></p>
+  </section>
+</>

@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { getCopy } from '../../i18n/copy';
+
+const { locale = 'en' } = Astro.props;
+const copy = getCopy(locale);
+const pageCopy = copy.datasets;
+const urls = [
+  'https://www.jaist.ac.jp/robot/datasets/comb1',
+  'https://www.jaist.ac.jp/robot/datasets/comb2',
+  'https://www.jaist.ac.jp/robot/datasets/ellip',
+  'https://www.jaist.ac.jp/robot/datasets/plg3'
+];
+---
+
+<>
+  <section class="page-intro">
+    <SectionHeading eyebrow={pageCopy.intro.eyebrow} title={pageCopy.intro.title} summary={pageCopy.intro.summary} />
+  </section>
+
+  <section class="section">
+    <div class="grid grid--cards">
+      {pageCopy.groups.map((group, index) => (
+        <article class="card">
+          <div class="card__body">
+            <p class="card__kicker">{copy.ui.datasetGroup}</p>
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
+            <a class="card__link" href={urls[index]} target="_blank" rel="noopener noreferrer">{group.action}</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</>
