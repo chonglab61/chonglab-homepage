@@ -2,7 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import ResearchCard from '../../components/ResearchCard.astro';
-import { featuredResearch, researchGroups } from '../../data/site';
+import { featuredResearch, researchThemes } from '../../data/site';
 import '../../styles/global.css';
 ---
 
@@ -24,7 +24,7 @@ import '../../styles/global.css';
   <section class="section">
     <SectionHeading eyebrow="Themes" title="Research areas" />
     <div class="grid grid--cards">
-      {researchGroups.map((group) => (
+      {researchThemes.map((group) => (
         <article class="card">
           <div class="card__body">
             <p class="card__kicker">Theme</p>
@@ -36,5 +36,6 @@ import '../../styles/global.css';
         </article>
       ))}
     </div>
+    <p class="section__cta"><a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">See all research projects on the JAIST site →</a></p>
   </section>
 </Layout>

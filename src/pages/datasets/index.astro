@@ -20,14 +20,16 @@ import '../../styles/global.css';
         <article class="card">
           <div class="card__body">
             <p class="card__kicker">Dataset group</p>
-            <h3>{group.group}</h3>
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
             <div class="chips">
               {group.links.map((link) => (
-                <a class="chip" href={`${group.baseUrl}/${link}`}>
+                <a class="chip" href={`${group.baseUrl}/${link}`} target="_blank" rel="noopener noreferrer">
                   {link}
                 </a>
               ))}
             </div>
+            <a class="card__link" href={group.baseUrl} target="_blank" rel="noopener noreferrer">Download / View on JAIST →</a>
           </div>
         </article>
       ))}

@@ -2,12 +2,17 @@
 import { navItems } from '../data/site';
 ---
 
-<header class="topbar">
+<header class="topbar" data-nav>
   <div class="topbar__brand">
-    <a href="/" aria-label="Chong Lab home">Chong Lab</a>
-    <span>JAIST robotics laboratory</span>
+    <a href="/" aria-label="Chong Lab home"><span class="topbar__dot" aria-hidden="true"></span>Chong Lab</a>
+    <span>Intelligent Robotic Laboratory of JAIST</span>
   </div>
-  <nav class="topbar__nav" aria-label="Primary">
+
+  <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+    Menu
+  </button>
+
+  <nav class="topbar__nav" id="primary-nav" aria-label="Primary">
     {navItems.map((item) => (
       <a href={item.href}>{item.label}</a>
     ))}

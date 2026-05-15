@@ -8,6 +8,6 @@ const { item } = Astro.props;
     <p class="card__kicker">{item.category}</p>
     <h3>{item.title}</h3>
     <p>{item.summary}</p>
-    <a class="card__link" href={item.href}>Open original page</a>
+    <a class="card__link" href={item.href} target="_blank" rel="noopener noreferrer">Open original page →</a>
   </div>
 </article>

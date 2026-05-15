@@ -1,0 +1,26 @@
+{
+  "director": {
+    "name": "Nak Young Chong",
+    "title": "Professor, School of Information Science, JAIST",
+    "photo": "/assets/img/prof-chong.svg",
+    "office": "Office I-61, 6F IS Building 1",
+    "tel": "+81-761-51-1248",
+    "fax": "+81-761-51-1149",
+    "email": "nakyoung@jaist.ac.jp",
+    "jaist_profile_url": "https://www.jaist.ac.jp/robot/"
+  },
+  "assistants": [
+    {
+      "name": "Teaching Assistant 1",
+      "role": "Teaching Assistant",
+      "email": "",
+      "note": "Supports lab operation and coursework coordination."
+    },
+    {
+      "name": "Teaching Assistant 2",
+      "role": "Teaching Assistant",
+      "email": "",
+      "note": "Supports experiments, scheduling, and member services."
+    }
+  ]
+}

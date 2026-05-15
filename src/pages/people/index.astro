@@ -6,26 +6,37 @@ import { people } from '../../data/site';
 import '../../styles/global.css';
 ---
 
-<Layout title="People | Chong Lab" description="Chong Lab staff and student overview.">
+<Layout title="People | Chong Lab" description="Chong Lab director and teaching assistants.">
   <section class="page-intro">
     <SectionHeading
       eyebrow="People"
-      title="Staff and students, simplified for the static site"
-      summary="The new site shows the current lab roster cleanly, without the old table-heavy layout."
+      title="Director and teaching assistants only"
+      summary="This static site intentionally limits people content to the director and teaching assistants."
     />
   </section>
 
   <section class="section">
-    <SectionHeading eyebrow="Staff" title="Lab leadership" />
-    <div class="grid grid--people">
-      {people.staff.map((person) => <PersonCard person={person} kind="staff" />)}
+    <div class="intro-grid intro-grid--people">
+      <div class="intro-grid__media">
+        <img src={people.director.photo} alt={people.director.name} width="400" height="400" loading="lazy" />
+      </div>
+      <div class="intro-grid__body">
+        <p class="card__kicker">Director</p>
+        <h3>{people.director.name}</h3>
+        <p>{people.director.title}</p>
+        <p>{people.director.office}</p>
+        <p>TEL {people.director.tel}, FAX {people.director.fax}</p>
+        <p>Email {people.director.email}</p>
+        <a class="card__link" href={people.director.jaist_profile_url} target="_blank" rel="noopener noreferrer">Full Profile on JAIST →</a>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <SectionHeading eyebrow="Students" title="Current students" />
+    <SectionHeading eyebrow="Teaching Assistants" title="Current assistants" />
     <div class="grid grid--people">
-      {people.students.map((person) => <PersonCard person={person} kind="student" />)}
+      {people.assistants.map((person) => <PersonCard person={person} kind="student" />)}
     </div>
+    <p class="section__cta"><a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">For full member list, visit the JAIST lab page →</a></p>
   </section>
 </Layout>

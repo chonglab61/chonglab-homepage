@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://chonglab-homepage.pages.dev/sitemap.xml
