@@ -12,7 +12,21 @@ const canonical = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Ast
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#11161C" />
+    <meta name="theme-color" content="#f4f0ea" />
+    <script is:inline>
+      (() => {
+        const storageKey = 'chonglab-theme';
+        const saved = localStorage.getItem(storageKey);
+        const mode = saved === 'light' || saved === 'dark' ? saved : 'system';
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.themeMode = mode;
+        document.documentElement.style.colorScheme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#0d1117' : '#f4f0ea');
+      })();
+    </script>
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -32,5 +46,6 @@ const canonical = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Ast
     <script type="module" src="/assets/js/nav.js"></script>
     <script type="module" src="/assets/js/hero.js"></script>
     <script type="module" src="/assets/js/services.js"></script>
+    <script type="module" src="/assets/js/theme.js"></script>
   </body>
 </html>

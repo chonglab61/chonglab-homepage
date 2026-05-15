@@ -12,6 +12,10 @@ import { navItems } from '../data/site';
     Menu
   </button>
 
+  <button class="topbar__theme" type="button" data-theme-toggle aria-label="Toggle theme">
+    Theme: Auto
+  </button>
+
   <nav class="topbar__nav" id="primary-nav" aria-label="Primary">
     {navItems.map((item) => (
       <a href={item.href}>{item.label}</a>

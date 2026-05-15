@@ -14,3 +14,8 @@ All notable changes to this project are recorded here.
 - Aligned the public site with the Chong Lab agent specification.
 - Reworked the homepage, research, people, and datasets pages around the editorial static layout.
 - Added public headers, redirects, navigation scripts, and maintenance notes for future sessions.
+
+## 0.2.1 - 2026-05-15
+
+- Added system-aware light/dark theming with a user toggle.
+- Rebalanced the site palette so it can read clearly in both themes.
