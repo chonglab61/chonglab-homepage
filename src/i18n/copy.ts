@@ -209,12 +209,16 @@ export const copy = {
       },
       director: {
         label: 'Director',
+        name: 'Nak Young Chong',
+        title: 'Professor, School of Information Science, JAIST',
+        office: 'Office I-61, 6F IS Building 1',
+        address: '1-1 Asahidai, Nomi, Ishikawa 923-1292, Japan',
         profileLabel: 'Full Profile on JAIST →'
       },
       assistantsHeading: 'Current assistants',
       assistants: [
-        { role: 'Teaching Assistant', note: 'Supports lab operation and coursework coordination.' },
-        { role: 'Teaching Assistant', note: 'Supports experiments, scheduling, and member services.' }
+        { role: 'Teaching Assistant', name: 'Current Assistant 1', note: 'Supports lab operation and coursework coordination.' },
+        { role: 'Teaching Assistant', name: 'Current Assistant 2', note: 'Supports experiments, scheduling, and member services.' }
       ],
       cta: 'For full member list, visit the JAIST lab page →'
     },
