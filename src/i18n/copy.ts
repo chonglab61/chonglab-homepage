@@ -188,7 +188,16 @@ export const copy = {
       director: {
         label: 'Director',
         profileLabel: 'Full Profile on JAIST →'
-      }
+      },
+      serviceHistory: [
+        'Visiting Scholar, Robotics Institute, Carnegie Mellon University, U.S.A., 2015-2018',
+        'International Scholar, Kyung Hee University, Korea, 2013-2014',
+        'Associate Graduate Faculty, University of Nevada, U.S.A., 2011-2016',
+        'Visiting Scholar, University of Genoa, Italy, 2010',
+        'Visiting Scholar, Georgia Institute of Technology, U.S.A., 2008-2009',
+        'Adjunct Senior Researcher, National Institute of Advanced Industrial Science and Technology, Tsukuba, Japan, 2003-2007',
+        'Visiting Scholar, Northwestern University, U.S.A., 2001-2002'
+      ]
     },
     people: {
       metaTitle: 'People | Chong Lab',
@@ -350,7 +359,16 @@ export const copy = {
       metaTitle: '研究室紹介 | チョン研究室',
       metaDescription: 'JAIST チョン研究室の紹介。',
       intro: { eyebrow: '紹介', title: 'JAIST ロボティクス研究室', summary: 'JAIST チョン研究室は、知識ネットワークと対話的コミュニケーションを通じて知能ロボットシステムの研究開発を進めています。' },
-      director: { label: '研究代表', profileLabel: 'JAIST の詳細プロフィール →' }
+      director: { label: '研究代表', profileLabel: 'JAIST の詳細プロフィール →' },
+      serviceHistory: [
+        'カーネギーメロン大学 Robotics Institute 客員研究員, 2015-2018',
+        '慶熙大学 国際客員研究員, 2013-2014',
+        'ネバダ大学 大学院客員教員, 2011-2016',
+        'ジェノヴァ大学 客員研究員, 2010',
+        'ジョージア工科大学 客員研究員, 2008-2009',
+        '産業技術総合研究所 招聘上級研究員, 2003-2007',
+        'ノースウェスタン大学 客員研究員, 2001-2002'
+      ]
     },
     people: {
       metaTitle: 'メンバー | チョン研究室',
@@ -488,8 +506,17 @@ export const copy = {
     about: {
       metaTitle: '关于 | 冲研究室',
       metaDescription: 'JAIST 冲研究室介绍。',
-      intro: { eyebrow: '介绍', title: 'JAIST 机器人实验室' },
-      director: { label: '研究负责人', profileLabel: '查看 JAIST 个人主页 →' }
+      intro: { eyebrow: '介绍', title: 'JAIST 机器人实验室', summary: 'JAIST 机器人实验室由 Chong 教授领导，致力于通过知识网络与交互式通信推进智能机器人系统的研究与开发。' },
+      director: { label: '研究负责人', profileLabel: '查看 JAIST 个人主页 →' },
+      serviceHistory: [
+        '美国卡内基梅隆大学 Robotics Institute 访问学者，2015-2018',
+        '韩国庆熙大学 国际学者，2013-2014',
+        '美国内华达大学 研究生院联合教员，2011-2016',
+        '意大利热那亚大学 访问学者，2010',
+        '美国佐治亚理工学院 访问学者，2008-2009',
+        '日本产业技术综合研究所 客座高级研究员，2003-2007',
+        '美国西北大学 访问学者，2001-2002'
+      ]
     },
     people: {
       metaTitle: '成员 | 冲研究室',

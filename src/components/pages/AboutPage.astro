@@ -8,7 +8,7 @@ const pageCopy = copy.about;
 ---
 
 <section class="page-intro">
-  <SectionHeading eyebrow={pageCopy.intro.eyebrow} title={pageCopy.intro.title} summary={pageCopy.intro.summary} />
+    <SectionHeading eyebrow={pageCopy.intro.eyebrow} title={pageCopy.intro.title} summary={pageCopy.intro.summary} />
   <div class="list-grid">
     <div class="list-item">
       <strong>{pageCopy.director.label}</strong>
@@ -20,7 +20,7 @@ const pageCopy = copy.about;
       <p>Email nakyoung@jaist.ac.jp</p>
       <a class="card__link" href="https://www.jaist.ac.jp/robot/" target="_blank" rel="noopener noreferrer">{pageCopy.director.profileLabel}</a>
     </div>
-    {copy.en.home.serviceHistory.map((item) => (
+    {pageCopy.serviceHistory.map((item) => (
       <div class="list-item">{item}</div>
     ))}
   </div>
