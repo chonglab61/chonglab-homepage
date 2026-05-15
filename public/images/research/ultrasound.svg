@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Robot-assisted ultrasound">
+  <rect width="1200" height="800" fill="#11161c"/>
+  <rect x="60" y="60" width="1080" height="680" rx="42" fill="#fbf8f3"/>
+  <circle cx="280" cy="400" r="180" fill="#8c5a2f" opacity="0.18"/>
+  <circle cx="330" cy="400" r="100" fill="#8c5a2f" opacity="0.45"/>
+  <path d="M640 170h360v100H640z" fill="#d8c3af"/>
+  <path d="M640 310h240v70H640z" fill="#11161c" opacity="0.12"/>
+  <path d="M640 420h300v70H640z" fill="#11161c" opacity="0.18"/>
+  <path d="M640 530h180v70H640z" fill="#11161c" opacity="0.26"/>
+  <text x="640" y="660" fill="#11161c" font-family="Georgia,serif" font-size="56" font-weight="700">Ultrasound</text>
+</svg>

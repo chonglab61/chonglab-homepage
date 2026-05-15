@@ -1,0 +1,40 @@
+---
+import Layout from '../../components/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ResearchCard from '../../components/ResearchCard.astro';
+import { featuredResearch, researchGroups } from '../../data/site';
+import '../../styles/global.css';
+---
+
+<Layout title="Research | Chong Lab" description="Research themes and original detail links for Chong Lab.">
+  <section class="page-intro">
+    <SectionHeading
+      eyebrow="Research"
+      title="Research presented as categories, not a dropdown maze"
+      summary="This page brings forward the major lab themes while preserving links to the original detailed project pages."
+    />
+  </section>
+
+  <section class="section">
+    <div class="grid grid--cards">
+      {featuredResearch.map((item) => <ResearchCard item={item} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow="Themes" title="Research areas" />
+    <div class="grid grid--cards">
+      {researchGroups.map((group) => (
+        <article class="card">
+          <div class="card__body">
+            <p class="card__kicker">Theme</p>
+            <h3>{group.title}</h3>
+            <div class="list-grid">
+              {group.items.map((item) => <div class="list-item">{item}</div>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

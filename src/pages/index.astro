@@ -1,0 +1,58 @@
+---
+import Layout from '../components/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import { hero, highlights, featuredResearch } from '../data/site';
+import '../styles/global.css';
+---
+
+<Layout title="Chong Lab" description="JAIST Chong Lab static front door and research index.">
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">{hero.eyebrow}</p>
+      <h1>{hero.title}</h1>
+      <p>{hero.description}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+        <a class="button" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+      </div>
+    </div>
+
+    <aside class="hero__panel">
+      <SectionHeading eyebrow="Deployment" title="Cloudflare-ready and intentionally small" />
+      <div class="hero__stats">
+        {highlights.map((item) => (
+          <div class="stat">
+            <strong>{item.label}</strong>
+            <span>{item.value}</span>
+          </div>
+        ))}
+      </div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <SectionHeading
+      eyebrow="Selected research"
+      title="A curated set of lab projects, presented as quiet editorial cards"
+      summary="Each card summarizes the work and points back to the original JAIST detail page."
+    />
+    <div class="grid grid--cards">
+      {featuredResearch.map((item) => <ResearchCard item={item} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading
+      eyebrow="Site policy"
+      title="New pages here, original depth there"
+      summary="The refactor should not duplicate the entire legacy site. The new site is the front door, not the archive."
+    />
+    <div class="chips">
+      <span class="chip">Original project pages stay canonical</span>
+      <span class="chip">Restricted lecture stays hidden or labeled</span>
+      <span class="chip">Datasets remain linked, not mirrored</span>
+      <span class="chip">GitHub to Cloudflare Pages build pipeline</span>
+    </div>
+  </section>
+</Layout>

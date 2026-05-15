@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Swarm robotics">
+  <rect width="1200" height="800" fill="#11161c"/>
+  <circle cx="220" cy="220" r="44" fill="#fbf8f3"/>
+  <circle cx="360" cy="310" r="44" fill="#d8c3af"/>
+  <circle cx="500" cy="210" r="44" fill="#fbf8f3"/>
+  <circle cx="650" cy="320" r="44" fill="#d8c3af"/>
+  <circle cx="800" cy="220" r="44" fill="#fbf8f3"/>
+  <circle cx="940" cy="330" r="44" fill="#d8c3af"/>
+  <path d="M220 220 360 310 500 210 650 320 800 220 940 330" fill="none" stroke="#8c5a2f" stroke-width="10" stroke-linecap="round" stroke-dasharray="16 20"/>
+  <text x="90" y="650" fill="#fbf8f3" font-family="Georgia,serif" font-size="58" font-weight="700">Swarm Robotics</text>
+</svg>

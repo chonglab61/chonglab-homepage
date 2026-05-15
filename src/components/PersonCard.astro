@@ -1,0 +1,13 @@
+---
+const { person, kind } = Astro.props;
+---
+
+<article class={`card card--person ${kind === 'staff' ? 'card--staff' : ''}`}>
+  <div class="card__body">
+    <p class="card__kicker">{person.role}</p>
+    <h3>{person.name}</h3>
+    {person.email ? <p class="card__meta">{person.email}</p> : null}
+    {person.note ? <p>{person.note}</p> : null}
+    {person.href ? <a class="card__link" href={person.href}>View profile</a> : null}
+  </div>
+</article>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Safe AI-Powered Visual Grasping">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f4f0ea"/>
+      <stop offset="1" stop-color="#d8c3af"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <circle cx="340" cy="360" r="160" fill="#11161c" opacity="0.92"/>
+  <circle cx="470" cy="360" r="86" fill="#fbf8f3" opacity="0.95"/>
+  <path d="M760 210h150l-120 380H640z" fill="#8c5a2f" opacity="0.9"/>
+  <path d="M170 620c120-88 220-132 350-120 86 8 166 44 264 36 114-10 178-58 246-120" fill="none" stroke="#11161c" stroke-width="14" stroke-linecap="round" opacity="0.55"/>
+  <text x="70" y="110" fill="#11161c" font-family="Georgia,serif" font-size="52" font-weight="700">Safe Grasping</text>
+</svg>

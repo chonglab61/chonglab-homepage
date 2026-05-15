@@ -1,0 +1,15 @@
+---
+import { navItems } from '../data/site';
+---
+
+<header class="topbar">
+  <div class="topbar__brand">
+    <a href="/" aria-label="Chong Lab home">Chong Lab</a>
+    <span>JAIST robotics laboratory</span>
+  </div>
+  <nav class="topbar__nav" aria-label="Primary">
+    {navItems.map((item) => (
+      <a href={item.href}>{item.label}</a>
+    ))}
+  </nav>
+</header>

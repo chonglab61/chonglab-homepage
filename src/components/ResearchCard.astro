@@ -1,0 +1,13 @@
+---
+const { item } = Astro.props;
+---
+
+<article class="card card--research">
+  <div class="card__image" style={`background-image:url(${item.image})`} aria-hidden="true"></div>
+  <div class="card__body">
+    <p class="card__kicker">{item.category}</p>
+    <h3>{item.title}</h3>
+    <p>{item.summary}</p>
+    <a class="card__link" href={item.href}>Open original page</a>
+  </div>
+</article>

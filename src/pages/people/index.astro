@@ -1,0 +1,31 @@
+---
+import Layout from '../../components/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { people } from '../../data/site';
+import '../../styles/global.css';
+---
+
+<Layout title="People | Chong Lab" description="Chong Lab staff and student overview.">
+  <section class="page-intro">
+    <SectionHeading
+      eyebrow="People"
+      title="Staff and students, simplified for the static site"
+      summary="The new site shows the current lab roster cleanly, without the old table-heavy layout."
+    />
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow="Staff" title="Lab leadership" />
+    <div class="grid grid--people">
+      {people.staff.map((person) => <PersonCard person={person} kind="staff" />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading eyebrow="Students" title="Current students" />
+    <div class="grid grid--people">
+      {people.students.map((person) => <PersonCard person={person} kind="student" />)}
+    </div>
+  </section>
+</Layout>
