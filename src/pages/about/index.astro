@@ -1,30 +1,5 @@
 ---
-import Layout from '../../components/Layout.astro';
-import SectionHeading from '../../components/SectionHeading.astro';
-import { introduction } from '../../data/site';
-import '../../styles/global.css';
+import PageRenderer from '../../components/PageRenderer.astro';
 ---
 
-<Layout title="About | Chong Lab" description="Introduction to Chong Lab at JAIST.">
-  <section class="page-intro">
-    <SectionHeading
-      eyebrow="Introduction"
-      title="JAIST Robotics Laboratory"
-      summary={introduction.summary}
-    />
-    <div class="list-grid">
-      <div class="list-item">
-        <strong>Director</strong>
-        <p>{introduction.director.name}</p>
-        <p>{introduction.director.role}</p>
-        <p>{introduction.director.contact}</p>
-        <p>{introduction.director.office}</p>
-        <p>TEL {introduction.director.phone}, FAX {introduction.director.fax}</p>
-        <p>Email {introduction.director.email}</p>
-      </div>
-      {introduction.service.map((item) => (
-        <div class="list-item">{item}</div>
-      ))}
-    </div>
-  </section>
-</Layout>
+<PageRenderer locale="en" page="about" />

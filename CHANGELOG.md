@@ -19,3 +19,8 @@ All notable changes to this project are recorded here.
 
 - Added system-aware light/dark theming with a user toggle.
 - Rebalanced the site palette so it can read clearly in both themes.
+
+## 0.3.0 - 2026-05-15
+
+- Added locale-prefixed pages for Japanese and Chinese alongside the English default.
+- Introduced shared page rendering and locale-aware navigation, SEO, and footer links.

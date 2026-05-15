@@ -1,24 +1,41 @@
 ---
-import { navItems } from '../data/site';
+import { getCopy, localeLabels, localeSwitchLabels } from '../i18n/copy';
+import { locales, localizedPath, stripLocalePrefix } from '../lib/i18n';
+
+const { locale = 'en' } = Astro.props;
+const copy = getCopy(locale);
+const navItems = [
+  { label: copy.nav.home, href: localizedPath(locale, '/') },
+  { label: copy.nav.research, href: localizedPath(locale, '/research/') },
+  { label: copy.nav.people, href: localizedPath(locale, '/people/') },
+  { label: copy.nav.datasets, href: localizedPath(locale, '/datasets/') }
+];
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 ---
 
 <header class="topbar" data-nav>
   <div class="topbar__brand">
-    <a href="/" aria-label="Chong Lab home"><span class="topbar__dot" aria-hidden="true"></span>Chong Lab</a>
-    <span>Intelligent Robotic Laboratory of JAIST</span>
+    <a href={localizedPath(locale, '/')} aria-label={copy.header.brand}><span class="topbar__dot" aria-hidden="true"></span>{copy.header.brand}</a>
+    <span>{copy.header.subtitle}</span>
   </div>
 
   <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-    Menu
+    {copy.header.menu}
   </button>
 
   <button class="topbar__theme" type="button" data-theme-toggle aria-label="Toggle theme">
-    Theme: Auto
+    {copy.header.themeLabel}: <span data-theme-state>{copy.header.themeAuto}</span>
   </button>
+
+  <nav class="topbar__locale" aria-label={copy.header.languageLabel}>
+    {locales.map((item) => (
+      <a href={localizedPath(item, stripLocalePrefix(Astro.url.pathname))} aria-current={item === locale ? 'page' : undefined} aria-label={localeLabels[item]}>{localeSwitchLabels[item]}</a>
+    ))}
+  </nav>
 
   <nav class="topbar__nav" id="primary-nav" aria-label="Primary">
     {navItems.map((item) => (
-      <a href={item.href}>{item.label}</a>
+      <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
     ))}
   </nav>
 </header>

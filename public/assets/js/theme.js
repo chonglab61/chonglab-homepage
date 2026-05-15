@@ -18,9 +18,8 @@ const applyTheme = () => {
   document.documentElement.style.colorScheme = theme;
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.setAttribute('content', theme === 'dark' ? '#0d1117' : '#f4f0ea');
-  if (toggle) {
-    toggle.textContent = `Theme: ${mode === 'system' ? 'Auto' : mode[0].toUpperCase() + mode.slice(1)}`;
-  }
+  const state = document.querySelector('[data-theme-state]');
+  if (state) state.textContent = mode === 'system' ? 'Auto' : mode[0].toUpperCase() + mode.slice(1);
 };
 
 if (toggle) {

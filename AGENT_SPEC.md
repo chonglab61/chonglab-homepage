@@ -552,6 +552,7 @@ When an agent receives a task related to this project, it must:
 | 9 | Audit all external links | ✅ done | — | Added `rel="noopener noreferrer"` everywhere |
 | 10 | Add `robots.txt` + OG meta tags | ✅ done | — | §4.5, §4.6 |
 | 11 | Add system-aware theme toggle | ✅ done | — | Default to system theme with manual override |
+| 12 | Add multilingual routing | 🔄 in progress | — | English default, plus `/ja/` and `/zh/` locales |
 
 **Status legend:** ⬜ pending · 🔄 in progress · ✅ done · ❌ blocked
 
