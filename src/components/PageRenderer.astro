@@ -1,26 +1,11 @@
 ---
 import '../styles/global.css';
-import Layout from './Layout.astro';
 import HomePage from './pages/HomePage.astro';
 import ResearchPage from './pages/ResearchPage.astro';
 import AboutPage from './pages/AboutPage.astro';
 import PeoplePage from './pages/PeoplePage.astro';
 import DatasetsPage from './pages/DatasetsPage.astro';
-import { getCopy } from '../i18n/copy';
-
 const { locale = 'en', page = 'home' } = Astro.props;
-const copy = getCopy(locale);
-
-const meta =
-  page === 'research'
-    ? copy.research
-    : page === 'about'
-      ? copy.about
-      : page === 'people'
-        ? copy.people
-        : page === 'datasets'
-          ? copy.datasets
-          : copy.home;
 
 const ActivePage =
   page === 'research'
@@ -34,6 +19,4 @@ const ActivePage =
       : HomePage;
 ---
 
-<Layout locale={locale} title={meta.metaTitle} description={meta.metaDescription}>
-  <ActivePage locale={locale} />
-</Layout>
+<ActivePage locale={locale} />

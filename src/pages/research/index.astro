@@ -1,5 +1,12 @@
 ---
-import PageRenderer from '../../components/PageRenderer.astro';
+import Layout from '../../components/Layout.astro';
+import { getCopy } from '../../i18n/copy';
+import ResearchPage from '../../components/pages/ResearchPage.astro';
+
+const locale = 'en';
+const copy = getCopy(locale).research;
 ---
 
-<PageRenderer locale="en" page="research" />
+<Layout locale={locale} title={copy.metaTitle} description={copy.metaDescription}>
+  <ResearchPage locale={locale} />
+</Layout>
