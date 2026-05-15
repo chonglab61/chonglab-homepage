@@ -30,7 +30,7 @@ const canonical = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Ast
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(canonical, Astro.site ?? Astro.url).toString()} />
+    <meta property="og:url" content={`https://chonglab-homepage.pages.dev${canonical}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
   </head>
